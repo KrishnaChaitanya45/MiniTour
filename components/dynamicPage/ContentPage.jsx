@@ -44,9 +44,9 @@ const ContentPage = () => {
               className={styles.inputBox}
             />
             <div className={styles.buttonContainer}>
-              <Link href={`/waitlist`}>
+              <a href="https://minitourguide.wordpress.com/59-2/">
                 <button>ASK MINITOUR</button>
-              </Link>
+              </a>
             </div>
           </div>
         ))}

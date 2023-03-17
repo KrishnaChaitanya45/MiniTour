@@ -2,7 +2,8 @@
   display: flex;
   transition: all 0.3s;
   align-items: center;
-  padding: 1vh 0;
+  justify-content: center;
+  padding: 5vh 0;
   box-shadow: 0 5px 10px 0.75px rgb(228, 222, 222);
 }
 .blogsContainer img {
@@ -13,11 +14,12 @@
 }
 .blogsContainer:hover {
   cursor: pointer;
+  border-radius: 12px;
   background-color: #eeeeee;
   scale: 1.05;
 }
 .blogText {
-  width: 50%;
+  width: 70%;
   gap: 2vh;
   display: flex;
   flex-direction: column;
@@ -27,16 +29,18 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
-  font-size: 1.2vw;
-  line-height: 1.5vw;
+  font-size: 1.5vw;
+  text-align: center;
+  line-height: 2vw;
+  text-align: center;
   color: #101828;
 }
 .blogDetail {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 1vw;
-  line-height: 1.2vw;
+  font-size: 1.2vw;
+  line-height: 1.5vw;
   color: #667085;
 }
 
