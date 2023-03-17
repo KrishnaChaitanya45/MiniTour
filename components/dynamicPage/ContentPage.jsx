@@ -6,11 +6,30 @@ import Link from "next/link";
 const ContentPage = () => {
   const [data, setData] = React.useState([]);
   let query = useRouter().asPath.split("/")[1].replaceAll("_", " ");
+  function fetchArticles() {
+    if (query == "[id]") {
+      query = window.location.pathname.split("/")[1].replaceAll("_", " ") + "?";
+      const filteredData = articlesJSON.filter(
+        (article) => article.Question === query
+      );
+      if (filteredData.length == 0) {
+        query = query.split("?")[0];
+        console.log(query);
+      }
+      setData(filteredData);
+    } else {
+      const filteredData = articlesJSON.filter(
+        (article) => article.Question === query
+      );
+
+      setData(filteredData);
+    }
+  }
   useEffect(() => {
-    const filteredData = articlesJSON.filter(
-      (article) => article.Question === query
-    );
-    setData(filteredData);
+    fetchArticles();
+    window.onload = () => {
+      fetchArticles();
+    };
   }, []);
   let i = 0;
   let dividedData = [];
@@ -48,7 +67,10 @@ const ContentPage = () => {
               className={styles.inputBox}
             />
             <div className={styles.buttonContainer}>
-              <a href="https://minitourguide.wordpress.com/59-2/">
+              <a
+                href="https://minitourguide.wordpress.com/59-2/"
+                target="_blank"
+              >
                 <button>ASK MINITOUR</button>
               </a>
             </div>
