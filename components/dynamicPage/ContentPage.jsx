@@ -18,8 +18,8 @@ const ContentPage = () => {
   return (
     <>
       {data &&
-        data.map((article) => (
-          <div className={styles.mainContainer}>
+        data.map((article, index) => (
+          <div className={styles.mainContainer} key={index}>
             <h1 className={styles.firstHeading}>{article.Question}</h1>
             {(function (article) {
               while (i < article.Article.split(".").length - 1) {
@@ -34,8 +34,12 @@ const ContentPage = () => {
                 i = i + 2;
               }
             })(article)}
-            {dividedData.map((data) => {
-              return <p className={styles.detailText}>{data}</p>;
+            {dividedData.map((data, index) => {
+              return (
+                <p className={styles.detailText} key={index}>
+                  {data}
+                </p>
+              );
             })}
             <b className={styles.learnMore}>Want to learn more?</b>
             <input

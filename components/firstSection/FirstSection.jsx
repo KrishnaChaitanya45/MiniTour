@@ -29,8 +29,11 @@ const FirstSection = (props) => {
       </b>
       <div className={styles.blogsContainer}>
         {data &&
-          data.map((article) => (
-            <Link href={`/${article.Question.replaceAll(" ", "_")}`}>
+          data.map((article, index) => (
+            <Link
+              href={`/${article.Question.replaceAll(" ", "_")}`}
+              key={index}
+            >
               <Blogs heading={article.Question} paragraph={article.Article} />
             </Link>
           ))}
