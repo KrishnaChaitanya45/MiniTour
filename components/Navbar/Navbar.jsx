@@ -1,9 +1,12 @@
+import Link from "next/link";
 import React from "react";
 import styles from "./Navbar.module.css";
 const Navbar = () => {
   return (
     <div className={styles.mainContainer}>
-      <h1 className={styles.firstHeading}>MINITOUR</h1>
+      <Link href={`/`} className={styles.firstHeading}>
+        MINITOUR
+      </Link>
       <h1 className={styles.secondHeading}>San Francisco</h1>
     </div>
   );

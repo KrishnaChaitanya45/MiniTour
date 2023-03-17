@@ -30,12 +30,11 @@ const FirstSection = (props) => {
       <div className={styles.blogsContainer}>
         {data &&
           data.map((article, index) => (
-            <Link
-              href={`/${article.Question.replaceAll(" ", "_")}`}
-              key={Math.random().toString()}
-            >
-              <Blogs heading={article.Question} paragraph={article.Article} />
-            </Link>
+            <div key={Math.random().toString()}>
+              <Link href={`/${article.Question.replaceAll(" ", "_")}`}>
+                <Blogs heading={article.Question} paragraph={article.Article} />
+              </Link>
+            </div>
           ))}
       </div>
     </div>
