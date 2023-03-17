@@ -32,7 +32,7 @@ const FirstSection = (props) => {
           data.map((article, index) => (
             <Link
               href={`/${article.Question.replaceAll(" ", "_")}`}
-              key={index}
+              key={Math.random().toString()}
             >
               <Blogs heading={article.Question} paragraph={article.Article} />
             </Link>
